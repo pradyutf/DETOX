@@ -151,7 +151,7 @@ fun HomeScreen(
                         val timeRemaining = screenTimeLimit.toMinutes() - screenTimeMinutes
                         if (timeRemaining > 0) {
                             drawContext.canvas.nativeCanvas.apply {
-                                val text = "${timeRemaining}m left"
+                                val text = "${UsageStatsUtil.formatDuration(timeRemaining.toLong() * 60L * 1000L)} left"
                                 val paint = android.graphics.Paint().apply {
                                     color = android.graphics.Color.WHITE
                                     alpha = (255 * 0.7f).toInt()
